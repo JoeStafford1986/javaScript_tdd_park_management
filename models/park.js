@@ -34,4 +34,14 @@ Park.prototype.findMostVisitedDinosaur = function () {
   return mostVisited;
 }
 
+Park.prototype.findAllBySpecies = function (species) {
+  let speciesOfDinosaur = [];
+  for (let currentDinosaur of this.dinosaurs) {
+    if (currentDinosaur.species === species) {
+      speciesOfDinosaur.push(currentDinosaur);
+    }
+  }
+  return speciesOfDinosaur;
+}
+
 module.exports = Park;
