@@ -20,7 +20,15 @@ describe('Park', function() {
     assert.strictEqual(actual, 100);
   });
 
-  it('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function () {
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, []);
+  });
+
+  it('should have a collection of dinosaurs that starts empty', function () {
+    const actual = park.getDinosaursCount();
+    assert.deepStrictEqual(actual, 0);
+  });
 
   it('should be able to add a dinosaur to its collection');
 
