@@ -19,9 +19,19 @@ Park.prototype.removeDinosaur = function (dinosaur) {
       dinosaurIndex = i;
     }
   }
-  if (dinosaurIndex != undefined) {
+  if (dinosaurIndex !== null) {
     this.dinosaurs.splice(dinosaurIndex, 1);
   }
+}
+
+Park.prototype.findMostVisitedDinosaur = function () {
+  let mostVisited = this.dinosaurs[0];
+  for (let currentDinosaur of this.dinosaurs) {
+    if (mostVisited !== null && currentDinosaur.guestsAttractedPerDay > mostVisited.guestsAttractedPerDay) {
+      mostVisited = currentDinosaur;
+    }
+  }
+  return mostVisited;
 }
 
 module.exports = Park;
