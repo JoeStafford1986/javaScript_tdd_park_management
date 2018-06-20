@@ -44,4 +44,11 @@ Park.prototype.findAllBySpecies = function (species) {
   return speciesOfDinosaur;
 }
 
+Park.prototype.removeAllBySpecies = function (species) {
+  const dinosaursToRemove = this.findAllBySpecies(species);
+  for (let currentDinosaur of dinosaursToRemove) {
+    this.removeDinosaur(currentDinosaur);
+  }
+}
+
 module.exports = Park;
